@@ -12,5 +12,4 @@ addons:
     packages:
     - rpm
 
-after_script:
- - ./publish.sh
+after_script: if test -n "$TRAVIS_TAG"; then npm run publish; fi
