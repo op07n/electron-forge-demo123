@@ -18,18 +18,10 @@ install:
 test_script:
 - node --version
 - npm --version
-- npm test
+- npm run lint
 
 build_script:
-- mkdir out
-- cd out
-- git clone https://github.com/electron-userland/electron-forge.git
-- cd electron-forge
-- git checkout publish-cmd
-- npm install
-- npm link
-- cd ../..
 - git tag --points-at HEAD > tagFile
 - SET /p ctag= < tagFile
 - DEL tagFile
-- If NOT %ctag% == "" electron-forge publish
+- If NOT %ctag% == "" npm run publish
