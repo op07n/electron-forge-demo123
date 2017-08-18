@@ -12,4 +12,7 @@ addons:
     packages:
     - rpm
 
-after_script: if test -n "$TRAVIS_TAG"; then npm run publish; fi
+script:
+- npm run lint
+- npm run make
+after_success: if test -n "$TRAVIS_TAG"; then npm run publish; fi
