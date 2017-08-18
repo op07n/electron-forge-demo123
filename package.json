@@ -38,7 +38,7 @@
       "electronInstallerDebian": {},
       "electronInstallerRedhat": {},
       "github_repository": {
-        "owner": "MarshallOfSound",
+        "owner": "malept",
         "name": "electron-forge-demo123"
       },
       "windowsStoreConfig": {
