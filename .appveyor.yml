@@ -21,7 +21,4 @@ test_script:
 - npm run lint
 
 build_script:
-- git tag --points-at HEAD > tagFile
-- SET /p ctag= < tagFile
-- DEL tagFile
-- If NOT %ctag% == "" npm run publish
+- IF %APPVEYOR_REPO_TAG% == "true" npm run publish
