@@ -7,6 +7,7 @@ environment:
 cache:
 - '%APPDATA%\npm-cache'
 - '%USERPROFILE%\.electron'
+- node_modules
 branches:
   only:
   - master
@@ -15,6 +16,7 @@ install:
 - ps: Install-Product node $env:nodejs_version $env:platform
 - set PATH=%APPDATA%\npm;%PATH%
 - npm install
+- npm update
 
 test_script:
 - node --version
