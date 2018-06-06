@@ -18,18 +18,17 @@
     "forge": {
       "make_targets": {
         "win32": [
-          "squirrel"
+          "zip"
         ],
         "darwin": [
-          "dmg"
+          "zip"
         ],
         "linux": [
-          "deb",
-          "rpm"
+          "zip"
         ]
       },
       "electronPackagerConfig": {
-        "packageManager": "npm"
+        "packageManager": false
       },
       "electronWinstallerConfig": {
         "name": "demo123"
@@ -53,7 +52,7 @@
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
-    "electron-forge": "^5.1.1",
+    "electron-forge": "^5.1.2",
     "electron-prebuilt-compile": "1.8.4",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.1.0",
