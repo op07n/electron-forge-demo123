@@ -20,7 +20,7 @@ install:
 - npm install
 - npm update
 - ps: |
-    $cert = New-SelfSignedCertificate -DnsName developer@example.com -Type CodeSigning -CertStoreLocation cert:\CurrentUser\My
+    $cert = New-SelfSignedCertificate -DnsName developer@example.com -Type CodeSigningCert -CertStoreLocation cert:\CurrentUser\My
     $certPassword = ConvertTo-SecureString -String "CertPassword" -Force –AsPlainText
     Export-PfxCertificate -Cert "cert:\CurrentUser\My" -FilePath "selfsigncert.pfx" -Password $CertPassword
 
