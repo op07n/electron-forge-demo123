@@ -20,7 +20,7 @@ install:
     $cert = New-SelfSignedCertificate -DnsName developer@example.com -Type CodeSigningCert -CertStoreLocation cert:\CurrentUser\My
     $path = 'cert:\CurrentUser\My\' + $cert.thumbprint
     $certPassword = ConvertTo-SecureString -String "CertPassword" -Force –AsPlainText
-    Export-PfxCertificate -cert $path -FilePath selfsigncert.pfx -Password $CertPassword
+    Export-PfxCertificate -cert $path -FilePath selfsigncert.pfx -Password $certPassword
 - ps: Install-Product node $env:nodejs_version $env:platform
 - set PATH=%APPDATA%\npm;%PATH%
 - npm install
