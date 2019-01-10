@@ -18,6 +18,7 @@
     "forge": {
       "make_targets": {
         "win32": [
+          "squirrel",
           "zip"
         ],
         "darwin": [
@@ -31,7 +32,8 @@
         "packageManager": false
       },
       "electronWinstallerConfig": {
-        "name": "demo123"
+        "name": "demo123",
+        "certificateFile": "selfsigncert.pfx"
       },
       "electronInstallerDebian": {},
       "electronInstallerRedhat": {},

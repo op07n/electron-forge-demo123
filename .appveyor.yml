@@ -2,6 +2,7 @@ platform:
 - x64
 environment:
   nodejs_version: "6"
+  ELECTRON_FORGE_ELECTRON_WINSTALLER_CONFIG_CERTIFICATE_PASSWORD: CertPassword
   GITHUB_TOKEN:
     secure: t1s7bP+lo6z4Gv+F0J2pvD4KY2nzgdtOtrz/eN3Q41XgoV4+GnBtuY2oHQdQJ1nH
 cache:
@@ -11,12 +12,17 @@ cache:
 branches:
   only:
   - master
+  - forge-657
   - /^v\d\.\d\.\d/
 install:
 - ps: Install-Product node $env:nodejs_version $env:platform
 - set PATH=%APPDATA%\npm;%PATH%
 - npm install
 - npm update
+- ps: |
+    $cert = New-SelfSignedCertificate -DnsName developer@example.com -Type CodeSigning -CertStoreLocation cert:\CurrentUser\My
+    $certPassword = ConvertTo-SecureString -String "CertPassword" -Force –AsPlainText
+    Export-PfxCertificate -Cert "cert:\CurrentUser\My" -FilePath "selfsigncert.pfx" -Password $CertPassword
 
 test_script:
 - node --version
