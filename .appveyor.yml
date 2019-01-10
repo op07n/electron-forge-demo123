@@ -3,6 +3,7 @@ platform:
 - x64
 environment:
   nodejs_version: "6"
+  DEBUG: "electron-forge:*"
   ELECTRON_FORGE_ELECTRON_WINSTALLER_CONFIG_CERTIFICATE_PASSWORD: CertPassword
   GITHUB_TOKEN:
     secure: t1s7bP+lo6z4Gv+F0J2pvD4KY2nzgdtOtrz/eN3Q41XgoV4+GnBtuY2oHQdQJ1nH
