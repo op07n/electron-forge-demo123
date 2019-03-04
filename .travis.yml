@@ -3,26 +3,23 @@ node_js: "6"
 os:
 - linux
 - osx
-dist: trusty
+dist: xenial
 osx_image: xcode8.3
-sudo: false
 
 cache:
+  npm: true
   directories:
-  - node_modules
   - $HOME/.cache/electron
 
 addons:
   apt:
     packages:
     - fakeroot
-    - rpm
 
 install:
 - npm install
 - npm update
 
 script:
-- npm run lint
 - if test -z "$TRAVIS_TAG"; then npm run make; fi
 after_success: if test -n "$TRAVIS_TAG"; then npm run publish; fi
