@@ -16,48 +16,54 @@
   "license": "MIT",
   "config": {
     "forge": {
-      "make_targets": {
-        "win32": [
-          "zip"
-        ],
-        "darwin": [
-          "zip"
-        ],
-        "linux": [
-          "zip"
-        ]
-      },
-      "electronPackagerConfig": {
-        "packageManager": false
-      },
-      "electronWinstallerConfig": {
-        "name": "demo123"
-      },
-      "electronInstallerDebian": {},
-      "electronInstallerRedhat": {},
-      "github_repository": {
-        "owner": "malept",
-        "name": "electron-forge-demo123"
-      },
-      "windowsStoreConfig": {
-        "packageName": "",
-        "name": "demo123"
-      }
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {
+            "name": "demo123"
+          },
+          "platforms": [
+            "linux"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "demo123"
+          },
+          "platforms": [
+            "win32"
+          ]
+        }
+      ],
+      "publishers": [
+        {
+          "config": {
+            "repository": {
+              "name": "electron-forge-demo123",
+              "owner": "malept"
+            }
+          },
+          "name": "@electron-forge/publisher-github",
+          "platforms": [
+            "linux",
+            "win32",
+            "darwin"
+          ]
+        }
+      ]
     }
   },
   "dependencies": {
-    "electron-compile": "^6.4.1"
+    "electron-squirrel-startup": "^1.0.0",
+    "esm": "^3.2.10"
   },
   "devDependencies": {
-    "babel-plugin-transform-async-to-generator": "^6.24.1",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-react": "^6.24.1",
-    "electron-forge": "^5.1.2",
-    "electron-prebuilt-compile": "1.8.4",
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb": "^15.1.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.2.1"
+    "@electron-forge/cli": "6.0.0-beta.33",
+    "@electron-forge/maker-deb": "6.0.0-beta.33",
+    "@electron-forge/maker-squirrel": "6.0.0-beta.33",
+    "@electron-forge/publisher-github": "6.0.0-beta.33",
+    "electron": "^4.0.6"
   }
 }
