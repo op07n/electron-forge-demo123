@@ -19,13 +19,9 @@
       "make_targets": {
         "win32": [
           "zip"
-        ],
-        "darwin": [
-          "zip"
-        ],
-        "linux": [
-          "zip"
         ]
+
+
       },
       "electronPackagerConfig": {
         "packageManager": false
