@@ -1,7 +1,7 @@
 {
   "name": "demo123",
   "productName": "demo123",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "My Electron application description",
   "main": "src/index.js",
   "scripts": {
@@ -18,42 +18,7 @@
     
     
     
- "forge": {
-   
-         "publishers": [
-        {
-          "name": "@electron-forge/publisher-github",
-          "config": {
-            "repository": {
-              "owner": "op07n",
-              "name": "demo123"
-            },
-            "prerelease": true
-          }
-        }
-      ],
-   
-   
-   
-       "electronRebuildConfig": {
-
-      },
-      "packagerConfig": {
-        "prune": true,
-        "asar": true,
-        "packageManager": "yarn",
-        "icon": "public/icon"
-      },
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "demo123"
-          }
-        }
-      ],  
-   
-   
+   "forge": {
       "make_targets": {
         "win32": [
           "squirrel"
@@ -66,14 +31,27 @@
       },    
     
   
-    
+      "electronPackagerConfig": {
+        "packageManager": false
+      },
+      "electronWinstallerConfig": {
+        "name": "demo123"
+      },
+      "electronInstallerDebian": {},
+      "electronInstallerRedhat": {},
       "github_repository": {
         "owner": "op07n",
         "name": "electron-forge-demo123"
+      },
+      "windowsStoreConfig": {
+        "packageName": "",
+        "name": "demo123"
       }
-
     }
-  },
+  },  
+    
+   
+
   "dependencies": {
     "electron-compile": "^6.4.1"
   },
