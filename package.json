@@ -32,7 +32,7 @@
       "electronInstallerDebian": {},
       "electronInstallerRedhat": {},
       "github_repository": {
-        "owner": "malept",
+        "owner": "op07n",
         "name": "electron-forge-demo123"
       },
       "windowsStoreConfig": {
