@@ -3,7 +3,7 @@ platform:
 environment:
   nodejs_version: "6"
   GITHUB_TOKEN:
-    secure: t1s7bP+lo6z4Gv+F0J2pvD4KY2nzgdtOtrz/eN3Q41XgoV4+GnBtuY2oHQdQJ1nH
+    secure: yrM69KAMKsN0o1btzkUu5VaJuPoP5UeLEjXAL5Mk1/30WiPKeryMi0GE/PcIy6DO
 cache:
 - '%APPDATA%\npm-cache'
 - '%USERPROFILE%\.electron'
