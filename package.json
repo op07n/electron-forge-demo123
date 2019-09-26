@@ -15,14 +15,22 @@
   "author": "samuel",
   "license": "MIT",
   "config": {
-    "forge": {
+    
+    
+    
+ "forge": {
       "make_targets": {
         "win32": [
           "zip"
         ]
-
-
       },
+      "publish_targets": {
+        "win32": [
+          "github"
+        ]
+      },    
+    
+  
       "electronPackagerConfig": {
         "packageManager": false
       },
