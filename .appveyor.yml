@@ -4,12 +4,13 @@ environment:
   nodejs_version: "6"
   GITHUB_TOKEN:
     secure: yrM69KAMKsN0o1btzkUu5VaJuPoP5UeLEjXAL5Mk1/30WiPKeryMi0GE/PcIy6DO
-  appveyor_repo_tag: false     
+    
     
 cache:
 - '%APPDATA%\npm-cache'
 - '%USERPROFILE%\.electron'
 - node_modules
+
 branches:
   only:
   - master
