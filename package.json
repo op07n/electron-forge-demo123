@@ -21,7 +21,7 @@
    "forge": {
       "make_targets": {
         "win32": [
-          "squirrel"
+          "zip"
         ]
       },
       "publish_targets": {
